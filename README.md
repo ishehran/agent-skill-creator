@@ -1,4 +1,4 @@
-# 🌍 Agent Skills Creator
+# 🌍 Agent Skills
 
 Welcome to **Agent Skills Creator** 🚀  
 This is a public repo for reusable **agent skills** that help you go from idea -> shipped product faster.
@@ -15,7 +15,7 @@ Each skill gives you:
 
 So instead of writing random prompts every time, you get a repeatable system.
 
-## 🤖 Model-agnostic by design
+## 🤖 Model-agnostic by design (I use them for codex)
 
 You can use these skills with **any coding AI model** or LLM assistant.
 
