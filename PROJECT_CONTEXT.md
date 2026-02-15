@@ -38,6 +38,12 @@ Each skill directory contains:
   - `skills-web-app-development/webapp-ideation/references/`
 - Added cross-domain expansion roadmap:
   - `SKILL_ROADMAP.md`
+- Upgraded 2D suite structure and level workflow:
+  - `skills-2d-game-development/README.md`
+  - `skills-2d-game-development/session-checkpoint-template.md`
+  - `skills-2d-game-development/game-level-design/SKILL.md`
+  - `skills-2d-game-development/phaser-gamedev/references/level-design-and-progression.md`
+  - updated core SKILL files for cleaner encoding and readability
 
 ## Session Handoff Notes
 

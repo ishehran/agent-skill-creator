@@ -1,101 +1,79 @@
----
+﻿---
 name: phaser-gamedev
-description: "Build 2D browser games with Phaser 3 (JS/TS): scenes, sprites, physics (Arcade/Matter), tilemaps (Tiled), animations, input. Trigger: 'Phaser scene', 'Arcade physics', 'tilemap', 'Phaser 3 game'."
+description: "Build 2D browser games with Phaser 3 (JS/TS): scenes, sprites, physics (Arcade/Matter), tilemaps (Tiled), animations, input, and level integration. Trigger: 'Phaser scene', 'Arcade physics', 'tilemap', '2D level', 'Phaser 3 game'."
 ---
 
 # Phaser Game Development
 
-Build 2D browser games using Phaser 3's scene-based architecture and physics systems.
+Build 2D browser games as small, testable playable slices with clear scene boundaries and data-driven content.
 
----
+## Default Mode: Gameplay-First
 
-## STOP: Before Loading Any Spritesheet
+Start from player experience and core loop behavior before adding polish.
 
-**Read [spritesheets-nineslice.md](references/spritesheets-nineslice.md) FIRST.**
+Do not hard-lock architecture details before the first playable is defined.
 
-Spritesheet loading is fragile—a few pixels off causes silent corruption that compounds into broken visuals. The reference file contains the mandatory inspection protocol.
+## STOP: Before Writing Gameplay Code
 
-**Quick rules** (details in reference):
+Define these first:
+1. Core loop in one sentence
+2. Win and failure conditions
+3. Player verbs and input model
+4. Scene map (Boot, Menu, Game, UI, GameOver)
+5. First level objective and progression target
+6. Asset constraints (sprite/tile sizes, collision model)
 
-1. **Measure the asset** before writing loader code—never guess frame dimensions
-2. **Character sprites use SQUARE frames**: If you calculate frameWidth=56, try 56 for height first
-3. **Different animations have different frame sizes**: A run cycle needs wider frames than idle; an attack needs extra width for weapon swing. Measure EACH spritesheet independently
-4. **Check for spacing**: Gaps between frames require `spacing: N` in loader config
-5. **Verify the math**: `imageWidth = (frameWidth × cols) + (spacing × (cols - 1))`
-
----
+If unclear, stay in planning mode.
 
 ## Reference Files
 
-Read these BEFORE working on the relevant feature:
+Read these before the related work:
 
 | When working on... | Read first |
-|--------------------|------------|
-| Loading ANY spritesheet | [spritesheets-nineslice.md](references/spritesheets-nineslice.md) |
-| Nine-slice UI panels | [spritesheets-nineslice.md](references/spritesheets-nineslice.md) |
-| Config, scenes, objects, input, animations | [core-patterns.md](references/core-patterns.md) |
-| Tiled tilemaps, collision layers | [tilemaps.md](references/tilemaps.md) |
-| Physics tuning, groups, pooling | [arcade-physics.md](references/arcade-physics.md) |
-| Performance issues, object pooling | [performance.md](references/performance.md) |
+|---|---|
+| Loading spritesheets and nine-slice assets | `references/spritesheets-nineslice.md` |
+| Core scene and system architecture | `references/core-patterns.md` |
+| Tilemaps, collision layers, and map integration | `references/tilemaps.md` |
+| Arcade physics tuning and pooling | `references/arcade-physics.md` |
+| Performance profiling and optimization | `references/performance.md` |
+| Building and tuning level flow | `references/level-design-and-progression.md` |
 
----
+## Core Workflow
 
-## Architecture Decisions (Make Early)
+1. Write a short game brief and first playable goal.
+2. Implement scene skeleton and boot pipeline.
+3. Implement one complete gameplay interaction (movement + one challenge).
+4. Integrate graybox level data from tilemap/object layers.
+5. Add checkpoint and failure/restart loop.
+6. Tune balance and performance on target hardware.
+7. Prepare regression hooks for testing.
 
-**Before building, decide**:
-- What **scenes** does this game need? (Boot, Menu, Game, UI overlay, GameOver)
-- What are the **core entities** and how do they interact?
-- What **physics** model fits? (Arcade for speed, Matter for realism, None for menus)
-- What **input methods**? (keyboard/gamepad/touch)
+## Non-Negotiables
 
-### Physics System Choice
-
-| System | Use When |
-|--------|----------|
-| **Arcade** | Platformers, shooters, most 2D games. Fast AABB collisions |
-| **Matter** | Physics puzzles, ragdolls, realistic collisions. Slower, more accurate |
-| **None** | Menu scenes, visual novels, card games |
-
----
-
-## Core Principles
-
-1. **Scene-first architecture**: Organize code around scene lifecycle and transitions
-2. **Composition over inheritance**: Build entities from sprite/body/controllers, not deep class trees
-3. **Physics-aware design**: Choose collision model early; don't retrofit physics late
-4. **Asset pipeline discipline**: Preload everything; reference by keys; keep loading deterministic
-5. **Frame-rate independence**: Use `delta` for motion and timers; avoid frame counting
-
----
+- Keep level data outside scene hardcode whenever possible.
+- Use deterministic update patterns for time-sensitive logic.
+- Keep physics choice explicit and justified.
+- Use object pooling for high-frequency entities.
+- Keep scene responsibilities narrow and composable.
 
 ## Anti-Patterns
 
-| Anti-Pattern | Problem | Solution |
-|--------------|---------|----------|
-| Global state on `window` | Scene transitions break state | Use scene data, registries |
-| Loading in `create()` | Assets not ready when referenced | Load in `preload()`, use Boot scene |
-| Frame counting | Game speed varies with FPS | Use `delta / 1000` |
-| Matter for simple collisions | Unnecessary complexity | Arcade handles most 2D games |
-| One giant scene | Hard to extend | Separate gameplay/UI/menus |
-| Magic numbers | Impossible to balance | Config objects, constants |
-| No object pooling | GC stutters | Groups with `setActive(false)` |
+| Anti-pattern | Why it fails | Better approach |
+|---|---|---|
+| One giant scene for all systems | Hard to debug and extend | Split gameplay, UI, and flow scenes |
+| Frame-count based gameplay timers | Behavior drifts across FPS | Use delta-time and explicit clocks |
+| Hardcoded enemy placement in code | Slow level iteration | Move placements to map/object data |
+| Add art before graybox validation | Expensive rework | Validate flow first, then polish |
+| Physics retrofitted late | Breaks interaction assumptions | Choose collision model early |
 
----
+## Level Creation Rule
 
-## Variation Guidance
+When building levels, use `references/level-design-and-progression.md` and the dedicated `../game-level-design/SKILL.md` flow.
 
-Outputs should vary based on:
-- **Genre** (platformer vs top-down vs shmup)
-- **Target platform** (mobile touch, desktop keyboard, gamepad)
-- **Art style** (pixel art scaling vs HD smoothing)
-- **Performance envelope** (many sprites → pooling; few sprites → simpler code)
-
----
+Keep progression intentional: introduce, reinforce, then combine mechanics.
 
 ## Remember
 
-Phaser provides powerful primitives—scenes, sprites, physics, input—but **architecture is your responsibility**.
+Phaser gives strong primitives, but system design and level quality determine the player experience.
 
-Think in systems: define the scenes, define the entities, define their interactions—then implement.
-
-**Codex can build complete, polished Phaser games. These guidelines illuminate the path—they don't fence it.**
+Optimize for clarity, fairness, and iteration speed.

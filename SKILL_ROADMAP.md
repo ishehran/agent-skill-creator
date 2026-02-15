@@ -16,18 +16,28 @@ For each domain, keep:
   - builder
   - testing
   - deployment ops
+- 2D suite upgraded with:
+  - suite-level README and checkpoint template
+  - cleaner core SKILL docs
+  - dedicated level design skill and references
 
 ## Next Priority: Improve 2D Game Suite
 
-Suggested additions:
+Completed in this phase:
+- added `skills-2d-game-development/README.md`
+- added `skills-2d-game-development/session-checkpoint-template.md`
+- updated:
+  - `skills-2d-game-development/phaser-gamedev/SKILL.md`
+  - `skills-2d-game-development/playwright-testing/SKILL.md`
+- added level design capability:
+  - `skills-2d-game-development/game-level-design/SKILL.md`
+  - `skills-2d-game-development/game-level-design/references/`
+  - `skills-2d-game-development/phaser-gamedev/references/level-design-and-progression.md`
+
+Suggested next additions:
 - `game-ideation/`: player problem, game loop hypothesis, retention hooks, test plan
 - `game-release-ops/`: build pipeline, crash telemetry, progression-safe rollouts
 - `game-economy-and-balance/`: reward loops, tuning workflow, anti-inflation controls
-
-Immediate improvement suggestions for existing 2D skills:
-- normalize file encoding and remove malformed characters
-- add a suite-level README with end-to-end flow
-- add session checkpoint template (same pattern as web app suite)
 
 ## New Domain: Windows App Development
 
@@ -67,4 +77,3 @@ Optional profiles can cover common stacks, for example:
 2. Upgrade 2D suite structure and quality.
 3. Create Windows suite baseline.
 4. Create mobile suite baseline.
-
