@@ -33,6 +33,11 @@ Each skill directory contains:
 - Added suite-level workflow and continuity docs:
   - `skills-web-app-development/README.md`
   - `skills-web-app-development/session-checkpoint-template.md`
+- Added web app ideation skill for pre-build product validation:
+  - `skills-web-app-development/webapp-ideation/SKILL.md`
+  - `skills-web-app-development/webapp-ideation/references/`
+- Added cross-domain expansion roadmap:
+  - `SKILL_ROADMAP.md`
 
 ## Session Handoff Notes
 
