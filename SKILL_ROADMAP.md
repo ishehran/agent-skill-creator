@@ -20,6 +20,16 @@ For each domain, keep:
   - suite-level README and checkpoint template
   - cleaner core SKILL docs
   - dedicated level design skill and references
+- Windows app suite baseline created with:
+  - ideation
+  - builder
+  - testing
+  - deployment ops
+- Mobile app suite baseline created with:
+  - ideation
+  - builder
+  - testing
+  - release ops
 
 ## Next Priority: Improve 2D Game Suite
 
@@ -55,6 +65,9 @@ Optional profiles can cover common stacks, for example:
 - Electron
 - Tauri
 
+Status:
+- baseline implemented with core skills and deployment profiles
+
 ## New Domain: Mobile App Development
 
 Suggested folder:
@@ -71,9 +84,12 @@ Optional profiles can cover common stacks, for example:
 - Flutter
 - native iOS/Android
 
+Status:
+- baseline implemented with core skills and release profiles
+
 ## Execution Order
 
 1. Finish web app suite stabilization and examples.
 2. Upgrade 2D suite structure and quality.
-3. Create Windows suite baseline.
-4. Create mobile suite baseline.
+3. Create game-ideation, game-release-ops, and game-economy skills.
+4. Add concrete examples and scenario packs to Windows and mobile suites.

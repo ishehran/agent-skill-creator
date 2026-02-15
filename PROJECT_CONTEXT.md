@@ -8,6 +8,8 @@ This repository stores reusable Codex skills and references for:
 
 - `skills-2d-game-development/`
 - `skills-web-app-development/`
+- `skills-windows-app-development/`
+- `skills-mobile-app-development/`
 
 Each skill directory contains:
 - `SKILL.md`
@@ -44,6 +46,16 @@ Each skill directory contains:
   - `skills-2d-game-development/game-level-design/SKILL.md`
   - `skills-2d-game-development/phaser-gamedev/references/level-design-and-progression.md`
   - updated core SKILL files for cleaner encoding and readability
+- Added Windows app development suite baseline:
+  - `skills-windows-app-development/windows-app-ideation/SKILL.md`
+  - `skills-windows-app-development/windows-app-builder/SKILL.md`
+  - `skills-windows-app-development/windows-app-testing/SKILL.md`
+  - `skills-windows-app-development/windows-app-deployment-ops/SKILL.md`
+- Added mobile app development suite baseline:
+  - `skills-mobile-app-development/mobile-app-ideation/SKILL.md`
+  - `skills-mobile-app-development/mobile-app-builder/SKILL.md`
+  - `skills-mobile-app-development/mobile-app-testing/SKILL.md`
+  - `skills-mobile-app-development/mobile-app-release-ops/SKILL.md`
 
 ## Session Handoff Notes
 
