@@ -19,6 +19,7 @@ For each domain, keep:
 - 2D suite upgraded with:
   - suite-level README and checkpoint template
   - cleaner core SKILL docs
+  - dedicated game UI design skill and references
   - dedicated level design skill and references
 - Windows app suite baseline created with:
   - ideation
@@ -39,6 +40,9 @@ Completed in this phase:
 - updated:
   - `skills-2d-game-development/phaser-gamedev/SKILL.md`
   - `skills-2d-game-development/playwright-testing/SKILL.md`
+- added game UI design capability:
+  - `skills-2d-game-development/game-ui-design/SKILL.md`
+  - `skills-2d-game-development/game-ui-design/references/`
 - added level design capability:
   - `skills-2d-game-development/game-level-design/SKILL.md`
   - `skills-2d-game-development/game-level-design/references/`

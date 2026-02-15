@@ -3,6 +3,8 @@
 This repository stores reusable Codex skills and references for:
 - 2D game development
 - web app development
+- Windows app development
+- mobile app development
 
 ## Current Structure
 
@@ -26,6 +28,7 @@ Each skill directory contains:
   - `skills-web-app-development/webapp-testing/SKILL.md`
   - `skills-web-app-development/webapp-deployment-ops/SKILL.md`
   - `skills-web-app-development/requirements-first-template.md`
+  - `skills-2d-game-development/game-ui-design/SKILL.md`
 
 ## Resume Status (2026-02-15)
 
@@ -40,9 +43,11 @@ Each skill directory contains:
   - `skills-web-app-development/webapp-ideation/references/`
 - Added cross-domain expansion roadmap:
   - `SKILL_ROADMAP.md`
-- Upgraded 2D suite structure and level workflow:
+- Upgraded 2D suite structure and UI/level workflow:
   - `skills-2d-game-development/README.md`
   - `skills-2d-game-development/session-checkpoint-template.md`
+  - `skills-2d-game-development/game-ui-design/SKILL.md`
+  - `skills-2d-game-development/game-ui-design/references/`
   - `skills-2d-game-development/game-level-design/SKILL.md`
   - `skills-2d-game-development/phaser-gamedev/references/level-design-and-progression.md`
   - updated core SKILL files for cleaner encoding and readability
