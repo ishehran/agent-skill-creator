@@ -25,10 +25,18 @@ Each skill directory contains:
   - `skills-web-app-development/webapp-deployment-ops/SKILL.md`
   - `skills-web-app-development/requirements-first-template.md`
 
+## Resume Status (2026-02-15)
+
+- Confirmed web app skill suite is stack-agnostic by default.
+- Stack-specific material is isolated to optional deployment profiles under:
+  - `skills-web-app-development/webapp-deployment-ops/profiles/`
+- Added suite-level workflow and continuity docs:
+  - `skills-web-app-development/README.md`
+  - `skills-web-app-development/session-checkpoint-template.md`
+
 ## Session Handoff Notes
 
 When finishing a work session:
 1. Commit all intended changes with a clear message.
 2. Update this file's "Last Checkpoint" section if project direction changed.
 3. Prefer small commits grouped by skill/topic for easier recovery.
-
