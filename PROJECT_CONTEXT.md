@@ -28,6 +28,7 @@ Each skill directory contains:
   - `skills-web-app-development/webapp-testing/SKILL.md`
   - `skills-web-app-development/webapp-deployment-ops/SKILL.md`
   - `skills-web-app-development/requirements-first-template.md`
+- Latest known 2D suite addition:
   - `skills-2d-game-development/game-ui-design/SKILL.md`
 
 ## Resume Status (2026-02-15)
