@@ -1,6 +1,6 @@
 ## Playwright MCP Cheatsheet (Web Apps)
 
-Use this when driving browser tests via MCP tools in Codex.
+Use this when driving browser tests via MCP-compatible tools in an AI coding assistant.
 
 ### Core Sequence
 
@@ -29,6 +29,27 @@ Always gather on failure:
 - optional state dump (`window.__TEST__.state()`)
 
 This reduces triage time significantly.
+
+### Console-First Loop
+
+Use this loop for every critical test flow:
+1. Collect console immediately after readiness.
+2. Run one user action block.
+3. Collect console again.
+4. Triage only newly added messages.
+5. Fail on unexpected errors and unhandled promise rejections.
+
+Do not defer console checks until the end of a long flow.
+
+### MCP Command Checklist
+
+When available in your environment, use:
+- `browser_console_messages` before and after major actions
+- `browser_network_requests` to correlate console errors with failed calls
+- `browser_evaluate` for `window.__TEST__.ready` and optional state seam checks
+- `browser_take_screenshot` when failures occur
+
+If MCP console commands are unavailable, capture equivalent output through test-runner hooks and keep the same fail policy.
 
 ### Selector Strategy
 
