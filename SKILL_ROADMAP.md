@@ -14,6 +14,7 @@ For each domain, keep:
 - Web app suite exists with:
   - ideation
   - builder
+  - ui motion from prompt/screenshot references
   - testing
   - deployment ops
 - 2D suite upgraded with:

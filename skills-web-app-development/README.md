@@ -6,6 +6,7 @@ This folder is a stack-agnostic skill set for building, validating, and operatin
 
 - `webapp-ideation/`: turn ideas into validated product bets before implementation.
 - `webapp-builder/`: design and implement web apps from requirements to vertical slices.
+- `webapp-ui-motion/`: turn prompts and screenshots into polished UI with researched animation patterns.
 - `webapp-testing/`: plan and stabilize tests by risk layer (unit/integration/contract/E2E/visual/a11y).
 - `webapp-deployment-ops/`: ship safely with release gates, observability, rollback, and incident response.
 
@@ -23,9 +24,10 @@ Choose a specific stack only when:
 1. Start with `webapp-ideation/SKILL.md` to validate the problem and define a clear bet.
 2. Convert the bet into implementation inputs using `requirements-first-template.md`.
 3. Use `webapp-builder/SKILL.md` to design and implement one critical journey.
-4. Use `webapp-testing/SKILL.md` to add high-signal coverage for that journey.
-5. Use `webapp-deployment-ops/SKILL.md` to release with explicit guardrails.
-6. Repeat in small slices.
+4. Use `webapp-ui-motion/SKILL.md` to match UI references and implement state-driven motion.
+5. Use `webapp-testing/SKILL.md` to add high-signal coverage for that journey.
+6. Use `webapp-deployment-ops/SKILL.md` to release with explicit guardrails.
+7. Repeat in small slices.
 
 ## Stack Profile Rule
 

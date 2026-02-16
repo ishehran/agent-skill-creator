@@ -42,6 +42,9 @@ Each skill directory contains:
 - Added web app ideation skill for pre-build product validation:
   - `skills-web-app-development/webapp-ideation/SKILL.md`
   - `skills-web-app-development/webapp-ideation/references/`
+- Added web app UI + motion skill for prompt/screenshot-driven interface implementation:
+  - `skills-web-app-development/webapp-ui-motion/SKILL.md`
+  - `skills-web-app-development/webapp-ui-motion/references/`
 - Added cross-domain expansion roadmap:
   - `SKILL_ROADMAP.md`
 - Upgraded 2D suite structure and UI/level workflow:
