@@ -36,7 +36,8 @@ Create a short requirements brief first:
 5. External integrations
 6. Security and compliance level
 7. Scale/performance expectation
-8. Timeline and success metric
+8. Asset strategy for UI visuals (source files available vs placeholders)
+9. Timeline and success metric
 
 Then capture implementation decisions:
 1. Rendering strategy: SPA, SSR, SSG, or hybrid
@@ -81,6 +82,7 @@ Read these before implementing the related area:
 - Emit structured logs with request correlation IDs.
 - Add at least one E2E smoke path for each critical journey.
 - Record why the stack was chosen for this project.
+- Use proper source assets for shipped UI (do not use cropped screenshot fragments).
 
 ## Anti-Patterns
 

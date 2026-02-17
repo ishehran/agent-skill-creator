@@ -8,7 +8,7 @@ Usage:
 
   # Multiple servers
   python scripts/with_server.py \
-    --server "npm run api" --port 3000 \
+    --server "npm run api" --port 4100 \
     --server "npm run web" --port 5173 \
     -- npm run test:e2e
 
@@ -31,6 +31,8 @@ import time
 import urllib.error
 import urllib.request
 from typing import List
+
+RESERVED_PORTS = {3000}
 
 
 def wait_for_port(host: str, port: int, timeout_s: int) -> None:
@@ -109,7 +111,7 @@ def main(argv: List[str]) -> int:
         dest="ports",
         type=int,
         required=True,
-        help="Port for each server (must match --server count)",
+        help="Port for each server (must match --server count). Port 3000 is reserved.",
     )
     parser.add_argument(
         "--url",
@@ -136,6 +138,17 @@ def main(argv: List[str]) -> int:
 
     if len(args.servers) != len(args.ports):
         print("Error: --server and --port counts must match.", file=sys.stderr)
+        return 2
+
+    reserved = sorted({port for port in args.ports if port in RESERVED_PORTS})
+    if reserved:
+        reserved_list = ", ".join(str(p) for p in reserved)
+        print(
+            f"Error: reserved port(s) requested: {reserved_list}. "
+            "Port 3000 is reserved for manual preview. "
+            "Use non-3000 ports such as 4173 for frontend and 4100+ for services.",
+            file=sys.stderr,
+        )
         return 2
 
     procs: List[subprocess.Popen[bytes]] = []

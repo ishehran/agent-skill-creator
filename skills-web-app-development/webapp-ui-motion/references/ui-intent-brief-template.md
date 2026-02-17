@@ -12,6 +12,7 @@ Use this template to communicate desired UI and motion clearly.
 
 - Screenshot(s) or URL(s):
 - Video or GIF reference (optional but recommended for motion-heavy UI):
+- Source assets provided (logo, SVG, PNG/JPG/WebP, icon set, sequence images):
 - Must-match elements:
 - Can-vary elements:
 
@@ -39,4 +40,5 @@ Use this template to communicate desired UI and motion clearly.
 
 - Additional screenshot needed:
 - Additional video/GIF needed:
+- Additional source files needed:
 - Specific interaction state clarification needed:

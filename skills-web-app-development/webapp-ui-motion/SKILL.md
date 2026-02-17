@@ -23,7 +23,8 @@ Define these first:
 5. Interaction states required (hover, focus, active, disabled, loading)
 6. Performance and accessibility constraints (mobile targets, reduced motion)
 7. Available visual references (screenshots, video clips, or motion examples)
-8. Acceptance criteria (visual + behavior + console cleanliness)
+8. Source asset availability (logo, SVG, PNG, JPG/WebP, icon set, sequence frames)
+9. Acceptance criteria (visual + behavior + console cleanliness)
 
 If unclear, stay in wireframe/prototype mode.
 
@@ -37,6 +38,7 @@ Read these before the relevant work:
 | Matching references and iterating to target UI | `references/reference-to-ui-matching-loop.md` |
 | Pressable and depth-driven controls (3D button behavior) | `references/pressable-3d-button-pattern.md` |
 | Motion accessibility and runtime performance | `references/motion-accessibility-and-performance.md` |
+| Image asset intake, usage policy, and fallback path | `references/image-asset-intake-and-fallback.md` |
 | Converting user intent into implementation inputs | `references/ui-intent-brief-template.md` |
 
 ## Workflow
@@ -45,10 +47,11 @@ Read these before the relevant work:
 2. Analyze prompt + screenshots and map must-match vs can-vary areas.
 3. Run targeted web research for animation patterns and implementation options.
 4. Choose implementation strategy: CSS-only, WAAPI, or library-based.
-5. Build static UI and responsive layout first.
-6. Add state-driven motion (hover, focus, active, enter/exit, feedback).
-7. Validate with screenshot comparison, console checks, and interaction tests.
-8. Refine until acceptance criteria are met.
+5. Collect proper source assets from user for all non-trivial visual elements.
+6. Build static UI and responsive layout first.
+7. Add state-driven motion (hover, focus, active, enter/exit, feedback).
+8. Validate with screenshot comparison, console checks, and interaction tests.
+9. Refine until acceptance criteria are met.
 
 ## Web Research Rule
 
@@ -78,6 +81,19 @@ If the user cannot provide assets:
 - label assumptions clearly in the output
 - request confirmation before polishing/finalizing
 
+## Reference Image Policy
+
+Reference screenshots are for composition and style guidance, not direct asset extraction.
+
+Never do the following by default:
+- crop objects from reference screenshots and paste them as production assets
+- use screenshot fragments as logos, hero objects, or icons
+
+Instead:
+1. ask the user for original files (SVG, PNG, JPG/WebP, logo pack, sequence frames)
+2. if unavailable, use licensed placeholders or generated alternatives that match intent
+3. document which assets are temporary and what still needs replacement
+
 ## Non-Negotiables
 
 - Ship all required interaction states, not just static visuals.
@@ -85,6 +101,8 @@ If the user cannot provide assets:
 - Honor reduced-motion preferences for non-essential animation.
 - Keep console clean during interaction flows.
 - Keep animations performant on typical hardware.
+- Use original/provided assets for hero visuals; do not ship screenshot cutouts.
+- For automated screenshot/verification runs, avoid port `3000` and use dedicated non-3000 ports.
 
 ## Anti-Patterns
 
@@ -93,6 +111,7 @@ If the user cannot provide assets:
 | Copy a visual style without state behavior | UI looks right but feels broken | Implement full state model first |
 | Add motion before layout is stable | Rework cost increases | Lock hierarchy and spacing first |
 | Animate everything constantly | Noise and fatigue | Animate state changes and key feedback only |
+| Crop a figure from a reference screenshot and ship it | Low quality and licensing/ownership risk | Request source asset or use licensed/generative fallback |
 | Ignore browser console during iteration | Hidden runtime issues survive | Validate console before/after major actions |
 | Pick animation library without constraints | Mismatch and bloat | Choose based on stack and performance goals |
 

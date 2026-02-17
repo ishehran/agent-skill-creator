@@ -6,7 +6,7 @@ This folder is a stack-agnostic skill set for building, validating, and operatin
 
 - `webapp-ideation/`: turn ideas into validated product bets before implementation.
 - `webapp-builder/`: design and implement web apps from requirements to vertical slices.
-- `webapp-ui-motion/`: turn prompts and screenshots into polished UI with researched animation patterns.
+- `webapp-ui-motion/`: turn prompts and screenshots into polished UI with researched animation patterns and proper source-asset handling.
 - `webapp-testing/`: plan and stabilize tests by risk layer (unit/integration/contract/E2E/visual/a11y).
 - `webapp-deployment-ops/`: ship safely with release gates, observability, rollback, and incident response.
 

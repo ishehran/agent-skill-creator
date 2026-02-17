@@ -10,6 +10,17 @@ Use this when driving browser tests via MCP-compatible tools in an AI coding ass
 4. Perform user actions.
 5. Assert outcomes and collect evidence on failure.
 
+### Server Port Reservation
+
+Use whatever server topology the scenario requires.
+
+Reserve port `3000` for manual preview and avoid it for automation runs.
+
+Suggested automation ports:
+- frontend: `4173` (or `5173`)
+- API: `4100`-`4199`
+- extra services: `4200+`
+
 ### Readiness Patterns
 
 Preferred:

@@ -87,6 +87,20 @@ Use `scripts/with_server.py` to run tests with one or more local servers.
 - wait by `--port` and optionally by `--url`
 - run tests only after services are healthy
 
+## Server Port Policy
+
+Server count is task-dependent and can be one, two, three, or more as needed.
+
+Port policy for this skill set:
+- reserve `3000` for your manual preview workflow
+- do not launch automation/test servers on `3000`
+- prefer explicit non-3000 ports, for example:
+  - frontend: `4173` (or `5173` if needed)
+  - API: `4100`-`4199`
+- additional services: `4200+`
+
+Always pass explicit ports to server commands and test helpers.
+
 ## Anti-Patterns
 
 | Anti-pattern | Failure mode | Better approach |
